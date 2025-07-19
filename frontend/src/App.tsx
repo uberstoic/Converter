@@ -73,12 +73,12 @@ function App() {
 
     return (
         <div className="App">
-            <header className="App-header">
-                <h1>Image Converter</h1>
-                <p>Convert JPG to PNG and vice versa with ease.</p>
-            </header>
             <main>
                 <div className="converter-container">
+                    <header className="App-header">
+                        <h1>Image Converter</h1>
+                        <p>Convert JPG to PNG and vice versa with ease.</p>
+                    </header>
                     <div {...getRootProps()} className={`dropzone ${isDragActive ? 'active' : ''}`}>
                         <input {...getInputProps()} />
                         {
@@ -109,6 +109,9 @@ function App() {
                     )}
                 </div>
             </main>
+            <footer className="App-footer">
+                <p>Converter 2025 - Just for interest's sake</p>
+            </footer>
         </div>
     );
 }
