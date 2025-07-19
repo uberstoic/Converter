@@ -101,7 +101,6 @@ function App() {
                     {convertedImageUrl && (
                         <div className="result">
                             <h2>Conversion Successful!</h2>
-                            <img src={convertedImageUrl} alt="Converted result" className="preview-image" />
                             <a href={convertedImageUrl} download={`converted-image.${convertTo}`} className="download-link">
                                 Download Image
                             </a>

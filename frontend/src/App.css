@@ -102,16 +102,9 @@ main {
 }
 
 .result {
-    margin-top: 30px;
+    margin-top: 20px; /* Adjusted margin */
+    padding-bottom: 20px; /* Added padding */
     text-align: center;
-}
-
-.preview-image {
-    max-width: 100%;
-    max-height: 400px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .download-link {
