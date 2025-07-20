@@ -1,4 +1,4 @@
-FROM node:18-alpine AS build
+FROM node:18-alpine AS frontend-builder
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ FROM nginx:stable-alpine
 
 RUN apk add --no-cache gettext
 
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=frontend-builder /app/dist /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/templates/default.conf.template
 
