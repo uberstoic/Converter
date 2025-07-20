@@ -12,18 +12,13 @@ RUN npm run build
 
 FROM nginx:stable-alpine
 
-RUN apk add --no-cache gettext
-
 COPY --from=frontend-builder /app/dist /usr/share/nginx/html
 
 # отладка
 RUN ls -la /usr/share/nginx/html
 
-COPY nginx.conf /etc/nginx/templates/default.conf.template
-
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
-CMD ["/entrypoint.sh"]
+CMD ["nginx", "-g", "daemon off;"]
