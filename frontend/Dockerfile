@@ -14,9 +14,6 @@ FROM nginx:stable-alpine
 
 COPY --from=frontend-builder /app/dist /usr/share/nginx/html
 
-# отладка
-RUN ls -la /usr/share/nginx/html
-
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80

@@ -8,7 +8,6 @@ import path from 'path';
 const app = express();
 const port: number = 5000;
 
-// Cоздаем папку для загрузок, если она не существует
 const uploadsDir: string = 'uploads';
 if (!fs.existsSync(uploadsDir)) {
     fs.mkdirSync(uploadsDir);
@@ -45,7 +44,6 @@ app.post('/convert', upload.single('image'), async (req: Request, res: Response)
             if (err) {
                 console.error('Error sending file:', err);
             }
-            // Удаляем файл после отправки
             fs.unlinkSync(outputPath);
         });
     } catch (error) {

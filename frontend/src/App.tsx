@@ -17,14 +17,13 @@ function App() {
             setConvertedImageUrl(null);
             setError(null);
 
-            // Автоматически определяем, в какой формат конвертировать
             const fileType = file.type;
             if (fileType === 'image/jpeg') {
                 setConvertTo('png');
             } else if (fileType === 'image/png') {
                 setConvertTo('jpg');
             } else {
-                setConvertTo(null); // Неподдерживаемый формат
+                setConvertTo(null);
                 setError('Unsupported file type. Please upload a JPG or PNG.');
             }
         }
