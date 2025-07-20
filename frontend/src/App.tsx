@@ -56,8 +56,7 @@ function App() {
         setConvertedImageUrl(null);
 
         try {
-            const apiUrl = import.meta.env.VITE_API_URL || '';
-            const response = await axios.post(`${apiUrl}/convert`, formData, {
+            const response = await axios.post(`/api/convert`, formData, {
                 responseType: 'blob',
             });
 
